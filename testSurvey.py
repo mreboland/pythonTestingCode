@@ -125,30 +125,3 @@ if __name__ == "__main__":
 # number of dots and characters on the first line of output when you run your test cases.
 # If a test case takes a long time to run because it contains many unit tests, you can
 # watch these results to get a sense of how many tests are passing.
-
-# 11-3. Employee: Write a class called Employee. The __init__() method should
-# take in a first name, a last name, and an annual salary, and store each of these
-# as attributes. Write a method called give_raise() that adds $5, 000 to the
-# annual salary by default but also accepts a different raise amount.
-# Write a test case for Employee. Write two test methods, test_give_default
-# _raise() and test_give_custom_raise(). Use the setUp() method so you don’t
-# have to create a new employee instance in each test method. Run your test
-# case, and make sure both tests pass.
-
-class Employee:
-    """Collect user name and salary"""
-    
-    def __init__(self, first, last, salary):
-        self.first = first
-        self.last = last
-        self.salary = salary
-        
-    def describeUser(self):
-        person = f"{self.first} {self.last}, earns {self.salary}"
-        
-    def giveRaise(self):
-        """Give the user a raise"""
-        self.salary += 5000
-        
-employee = Employee("billy", "bob", 10000)
-employee.describeUser()
