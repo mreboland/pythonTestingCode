@@ -8,6 +8,7 @@
 # with values such as 'santiago' and 'chile' results in the correct string. Run
 # test_cities.py, and make sure test_city_country() passes.
 
+
 # 11-2. Population: Modify your function so it requires a third parameter,
 # population. It should now return a single string of the form City, Country –
 # population xxx, such as Santiago, Chile – population 5000000. Run test
@@ -19,23 +20,10 @@
 # 'population=5000000'. Run test_cities.py again, and make sure this new test
 # passes.
 
-import unittest
-from cityFunctions import cityInfo
+def cityInfo(city, country, population=""):
+    if population:  
+        formattedCityInfo = f"{city.title()}, {country.title()} - population {population}"
+    else:
+        formattedCityInfo = f"{city.title()}, {country.title()}"
+    return formattedCityInfo
 
-class TestCityFunction(unittest.TestCase):
-    """Tests for cityFunction.py"""
-    
-    def testCityCountry(self):
-        """Does our cityFunction output name as City, Country"""
-        formattedCity = cityInfo("santiago", "chile")
-        self.assertEqual(formattedCity, "Santiago, Chile")
-        
-    def testCityCountryPop(self):
-        """Does our cityFunction output population as well"""
-        formattedCity = cityInfo("santiago", "chile", 5000000)
-        self.assertEqual(formattedCity, "Santiago, Chile - population 5000000")
-        
-        
-        
-if __name__ == "__main__":
-    unittest.main()
